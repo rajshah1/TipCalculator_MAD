@@ -15,6 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#B1AAAA"
+        android:onClick="clearScreen"
         android:text="@string/text_button_clear"
         android:textAllCaps="false"
         android:textColor="#010209"
@@ -44,7 +45,6 @@
         android:hint="@string/editText_bill_hint"
         android:inputType="numberSigned"
         android:minHeight="48dp"
-        android:text="@string/editText_billAmount"
         app:layout_constraintBottom_toBottomOf="@+id/textView_billTotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -86,7 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/radiobutton_fifteenPer" />
+            android:text="@string/radiobutton_fifteenPer"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/radioButton7"
@@ -124,11 +125,11 @@
         app:layout_constraintTop_toTopOf="@+id/textView_Custom" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView_customProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="40%"
+        android:text="@string/textView_customProgressBar"
         app:layout_constraintBottom_toBottomOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seekBar"
@@ -188,6 +189,7 @@
         android:id="@+id/radioGroup_split"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checkedButton="@id/radioButton_one"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView_splitBy"
