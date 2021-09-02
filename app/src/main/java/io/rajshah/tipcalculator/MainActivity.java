@@ -35,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.setActionBarConfig();
         billAmount = findViewById(R.id.editText_billAmount);
+        textView_tip_val = findViewById(R.id.textView_tip_val);
+        textView_total_val = findViewById(R.id.textView_total_val);
+        textView_split_val = findViewById(R.id.textView_split_val);
+        textView_customProgressBar= findViewById(R.id.textView_customProgressBar);
+        radioGroup_tip=findViewById(R.id.radioGroup_tip);
+        radioGroup_split=findViewById(R.id.radioGroup_split);
+        seekBar=findViewById(R.id.seekBar);
+
+
         this.billAmountValidator(billAmount);
     }
 
