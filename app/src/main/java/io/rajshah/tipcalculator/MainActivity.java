@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
     private  static final String TAG = "TipCalculator";
 
     EditText billAmount;
+    RadioGroup radioGroup_tip,radioGroup_split;
+    TextView textView_tip_val,textView_total_val,textView_split_val,textView_customProgressBar;
+    SeekBar seekBar;
+    double totalValueInDouble,totalTip=10.0,currentProgressInbar;
+    int divideBetweenPerson=1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
