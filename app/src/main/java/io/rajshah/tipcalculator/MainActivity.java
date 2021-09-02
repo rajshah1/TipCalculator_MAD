@@ -20,6 +20,8 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
+    private  static final String TAG = "TipCalculator";
+
     EditText billAmount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
