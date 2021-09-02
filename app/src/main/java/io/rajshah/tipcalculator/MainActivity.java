@@ -12,13 +12,14 @@ import android.text.method.DigitsKeyListener;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
+    EditText billAmount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setActionBarConfig();
-
+        billAmount = findViewById(R.id.editText_billAmount);
+        this.billAmountValidator(billAmount);
     }
 
     /*
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         ColorDrawable cd = new ColorDrawable(Color.parseColor("#000000"));
         assert aBar != null;
         aBar.setBackgroundDrawable(cd);
+    }
+    /*
+         EditText Validator to allow Decimal and Positive Numbers
+     */
+    private void billAmountValidator(@NonNull EditText editor) {
+        editor.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
+        editor.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
     }
 
 }
