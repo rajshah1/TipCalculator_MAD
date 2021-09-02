@@ -1,11 +1,15 @@
 package io.rajshah.tipcalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.method.DigitsKeyListener;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
