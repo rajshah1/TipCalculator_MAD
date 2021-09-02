@@ -19,4 +19,5 @@
     <string name="radioButton_three">Three</string>
     <string name="RadioButton_four">Four</string>
     <string name="textView_Split">Total/Person:</string>
+    <string name="textView_customProgressBar">40%</string>
 </resources>
