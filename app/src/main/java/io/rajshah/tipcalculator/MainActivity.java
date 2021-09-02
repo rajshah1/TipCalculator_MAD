@@ -45,6 +45,93 @@ public class MainActivity extends AppCompatActivity {
 
 
         this.billAmountValidator(billAmount);
+        this.resetCustomSeekBarToInit();
+
+        billAmount.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().matches(""))
+                    setValuesIfAmountIsNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+               if(editable.toString().matches(""))
+                   setValuesIfAmountIsNull();
+               else{
+                   setFinalValueInDouble(Double.parseDouble(editable.toString()));
+                   updateFinalDisplay();
+               }
+            }
+        });
+        radioGroup_tip.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.radioButton5) {
+                    resetCustomSeekBarToInit();
+                    setTotalTip(10.0);
+                    updateFinalDisplay();
+                } else if (i == R.id.radioButton6) {
+                    resetCustomSeekBarToInit();
+                    setTotalTip(15.0);
+                    updateFinalDisplay();
+                } else if (i == R.id.radioButton7) {
+                    resetCustomSeekBarToInit();
+                    setTotalTip(18.0);
+                    updateFinalDisplay();
+                } else if (i == R.id.radioButton8) {
+                    seekBar.setEnabled(true);
+                    setTotalTip(40.0);
+                    updateFinalDisplay();
+                }
+
+            }
+        });
+
+        radioGroup_split.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i == R.id.radioButton_one){
+                    divideBetweenPerson=1;
+                    updateFinalDisplay();
+                }else if(i == R.id.radioButton_two){
+                    divideBetweenPerson=2;
+                    updateFinalDisplay();
+                }else if(i == R.id.radioButton_three){
+                    divideBetweenPerson=3;
+                    updateFinalDisplay();
+                }else if(i == R.id.radioButton_four){
+                    divideBetweenPerson=4;
+                    updateFinalDisplay();
+                }
+            }
+        });
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                 currentProgressInbar = Double.parseDouble(String.valueOf(i));
+                 textView_customProgressBar.setText(i+"%");
+                 setTotalTip(currentProgressInbar);
+                 updateFinalDisplay();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
     /*
