@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         assert aBar != null;
         aBar.setBackgroundDrawable(cd);
     }
+
     /*
          EditText Validator to allow Decimal and Positive Numbers
      */
