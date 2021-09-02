@@ -42,7 +42,7 @@
         android:backgroundTint="#64AFEC"
         android:ems="10"
         android:hint="@string/editText_bill_hint"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
         android:minHeight="48dp"
         android:text="@string/editText_billAmount"
         app:layout_constraintBottom_toBottomOf="@+id/textView_billTotal"
@@ -185,7 +185,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_total" />
 
     <RadioGroup
-        android:id="@+id/radio"
+        android:id="@+id/radioGroup_split"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
