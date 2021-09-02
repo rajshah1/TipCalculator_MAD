@@ -7,9 +7,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     EditText billAmount;
