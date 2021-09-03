@@ -112,10 +112,10 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                 currentProgressInbar = Double.parseDouble(String.valueOf(i));
-                 textView_customProgressBar.setText(i+"%");
-                 setTotalTip(currentProgressInbar);
-                 updateFinalDisplay();
+                currentProgressInbar = Double.parseDouble(String.valueOf(i));
+                textView_customProgressBar.setText(i + "%");
+                setTotalTip(currentProgressInbar);
+                updateFinalDisplay();
             }
 
             @Override
