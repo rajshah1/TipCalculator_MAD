@@ -96,19 +96,16 @@ public class MainActivity extends AppCompatActivity {
         radioGroup_split.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if(i == R.id.radioButton_one){
-                    divideBetweenPerson=1;
-                    updateFinalDisplay();
-                }else if(i == R.id.radioButton_two){
-                    divideBetweenPerson=2;
-                    updateFinalDisplay();
-                }else if(i == R.id.radioButton_three){
-                    divideBetweenPerson=3;
-                    updateFinalDisplay();
-                }else if(i == R.id.radioButton_four){
-                    divideBetweenPerson=4;
-                    updateFinalDisplay();
+                if (i == R.id.radioButton_one) {
+                    divideBetweenPerson = 1;
+                } else if (i == R.id.radioButton_two) {
+                    divideBetweenPerson = 2;
+                } else if (i == R.id.radioButton_three) {
+                    divideBetweenPerson = 3;
+                } else if (i == R.id.radioButton_four) {
+                    divideBetweenPerson = 4;
                 }
+                updateFinalDisplay();
             }
         });
 
