@@ -148,11 +148,12 @@ public class MainActivity extends AppCompatActivity {
         editor.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
         editor.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
     }
-    private void setValuesIfAmountIsNull(){
-            setFinalValueToZero();
-            textView_tip_val.setText(R.string.textView_tip_val);
-            textView_total_val.setText(R.string.textView_tip_val);
-            textView_split_val.setText(R.string.textView_tip_val);
+
+    private void setValuesIfAmountIsNull() {
+        setFinalValueToZero();
+        textView_tip_val.setText(R.string.textView_tip_val);
+        textView_total_val.setText(R.string.textView_tip_val);
+        textView_split_val.setText(R.string.textView_tip_val);
     }
 
     private void setFinalValueToZero() {
@@ -163,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
         totalValueInDouble = value;
     }
 
-    private void updateFinalDisplay(){
-        textView_tip_val.setText("$"+getFinalTipvalue());
-        textView_total_val.setText("$"+totalValueCalculatorAndTip());
+    private void updateFinalDisplay() {
+        textView_tip_val.setText("$" + getFinalTipvalue());
+        textView_total_val.setText("$" + totalValueCalculatorAndTip());
         DecimalFormat df = new DecimalFormat("###.#");
-        textView_split_val.setText("$"+df.format(calculatePerPersonShare(totalValueCalculatorAndTip(),divideBetweenPerson)));
+        textView_split_val.setText("$" + df.format(calculatePerPersonShare(totalValueCalculatorAndTip(), divideBetweenPerson)));
     }
 
     private Double totalValueCalculatorAndTip() {
@@ -181,17 +182,18 @@ public class MainActivity extends AppCompatActivity {
     private void setTotalTip(double totalTip) {
         this.totalTip = totalTip;
     }
-    private void resetCustomSeekBarToInit(){
+
+    private void resetCustomSeekBarToInit() {
         seekBar.setMax(50);
         seekBar.setProgress(40);
         seekBar.setEnabled(false);
     }
 
-    private Double calculatePerPersonShare(Double totalVal,int divideBetweenPerson){
-        return totalVal/divideBetweenPerson;
+    private Double calculatePerPersonShare(Double totalVal, int divideBetweenPerson) {
+        return totalVal / divideBetweenPerson;
     }
 
-    public void clearScreen(View view){
+    public void clearScreen(View view) {
         billAmount.getText().clear();
         radioGroup_tip.check(R.id.radioButton5);
         radioGroup_split.check(R.id.radioButton_one);
