@@ -20,14 +20,14 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-    private  static final String TAG = "TipCalculator";
+    private static final String TAG = "TipCalculator";
 
     EditText billAmount;
-    RadioGroup radioGroup_tip,radioGroup_split;
-    TextView textView_tip_val,textView_total_val,textView_split_val,textView_customProgressBar;
+    RadioGroup radioGroup_tip, radioGroup_split;
+    TextView textView_tip_val, textView_total_val, textView_split_val, textView_customProgressBar;
     SeekBar seekBar;
-    double totalValueInDouble,totalTip=10.0,currentProgressInbar;
-    int divideBetweenPerson=1;
+    double totalValueInDouble, totalTip = 10.0, currentProgressInbar;
+    int divideBetweenPerson = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         textView_tip_val = findViewById(R.id.textView_tip_val);
         textView_total_val = findViewById(R.id.textView_total_val);
         textView_split_val = findViewById(R.id.textView_split_val);
-        textView_customProgressBar= findViewById(R.id.textView_customProgressBar);
-        radioGroup_tip=findViewById(R.id.radioGroup_tip);
-        radioGroup_split=findViewById(R.id.radioGroup_split);
-        seekBar=findViewById(R.id.seekBar);
+        textView_customProgressBar = findViewById(R.id.textView_customProgressBar);
+        radioGroup_tip = findViewById(R.id.radioGroup_tip);
+        radioGroup_split = findViewById(R.id.radioGroup_split);
+        seekBar = findViewById(R.id.seekBar);
 
 
         this.billAmountValidator(billAmount);
