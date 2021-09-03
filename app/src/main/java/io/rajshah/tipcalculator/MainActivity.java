@@ -55,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence.toString().matches(""))
+                if (charSequence.toString().matches(""))
                     setValuesIfAmountIsNull();
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-               if(editable.toString().matches(""))
-                   setValuesIfAmountIsNull();
-               else{
-                   setFinalValueInDouble(Double.parseDouble(editable.toString()));
-                   updateFinalDisplay();
-               }
+                if (editable.toString().matches(""))
+                    setValuesIfAmountIsNull();
+                else {
+                    setFinalValueInDouble(Double.parseDouble(editable.toString()));
+                    updateFinalDisplay();
+                }
             }
         });
         radioGroup_tip.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
