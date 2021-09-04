@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                     setTotalTip(18.0);
                     updateFinalDisplay();
                 } else if (i == R.id.radioButton8) {
-                    seekBar.setEnabled(true);
                     setTotalTip(40.0);
                     updateFinalDisplay();
                 }
@@ -120,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
+                RadioButton customRadioButton=findViewById(R.id.radioButton8);
+                customRadioButton.setChecked(true);
             }
 
             @Override
@@ -186,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
     private void resetCustomSeekBarToInit() {
         seekBar.setMax(50);
         seekBar.setProgress(40);
-        seekBar.setEnabled(false);
     }
 
     private Double calculatePerPersonShare(Double totalVal, int divideBetweenPerson) {
@@ -197,7 +197,6 @@ public class MainActivity extends AppCompatActivity {
         billAmount.getText().clear();
         radioGroup_tip.check(R.id.radioButton5);
         radioGroup_split.check(R.id.radioButton_one);
-
     }
 
 }
