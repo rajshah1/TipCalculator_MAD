@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void billAmountValidator(@NonNull EditText editor) {
         editor.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
-        editor.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+        editor.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
     }
 
     private void setValuesIfAmountIsNull() {
@@ -166,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateFinalDisplay() {
-        textView_tip_val.setText("$" + getFinalTipvalue());
-        textView_total_val.setText("$" + totalValueCalculatorAndTip());
-        DecimalFormat df = new DecimalFormat("###.#");
+        DecimalFormat df = new DecimalFormat("###.##");
+        textView_tip_val.setText("$" + df.format(getFinalTipvalue()));
+        textView_total_val.setText("$" + df.format(totalValueCalculatorAndTip()));
         textView_split_val.setText("$" + df.format(calculatePerPersonShare(totalValueCalculatorAndTip(), divideBetweenPerson)));
     }
 
